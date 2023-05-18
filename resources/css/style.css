@@ -5,3 +5,8 @@
     text-align: center;
 
 }
+body{
+    background-image: url('https://fr.web.img5.acsta.net/medias/nmedia/18/68/80/53/19737342.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}

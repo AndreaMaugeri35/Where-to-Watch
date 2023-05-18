@@ -7,13 +7,16 @@ use Illuminate\Http\Request;
 
 class CinemaController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except('index','show');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $cinemas = Cinema::all();
-        return view('cinema.index');
+        return view('cinema.index', compact('cinemas'));
     }
 
     /**
@@ -21,23 +24,16 @@ class CinemaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cinema.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
      */
     public function show(Cinema $cinema)
     {
-        //
+        return view('cinema.show',compact('cinema'));
     }
 
     /**

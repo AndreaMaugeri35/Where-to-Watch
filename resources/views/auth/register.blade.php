@@ -4,7 +4,7 @@
     <div class="container p-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-            <form class="shadow p-5" action="{{route('register')}}" method="POST">
+            <form class="shadow p-5 bg-white rounded" action="{{route('register')}}" method="POST">
 
                 @csrf
 

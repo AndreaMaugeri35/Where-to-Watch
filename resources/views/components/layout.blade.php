@@ -15,7 +15,7 @@
     <x-header header="{{$header}}">
     </x-header>
 
-    <div>
+    <div class="min-vh-100">
         {{$slot}}
     </div>
 
