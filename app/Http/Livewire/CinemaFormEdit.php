@@ -10,6 +10,8 @@ class CinemaFormEdit extends Component
 {
     use WithFileUploads;
 
+    public $cinema;
+
     public $name, $address, $description, $image;
 
     public $old_image;
@@ -40,6 +42,20 @@ class CinemaFormEdit extends Component
 
 
         session()->flash('cinemaUpdated', 'Hai aggiornato la sala');
+        return redirect(route('cinema.index'));
+    }
+
+    public function mount(){
+        $this->name = $this->cinema->name;
+        $this->address = $this->cinema->address;
+        $this->old_image = $this->cinema->image;
+        $this->description = $this->cinema->description;
+    }
+
+    public function destroy(){
+        $this->cinema->delete();
+        session()->flash('cinemaDeleted', 'Eliminato');
+        return redirect(route('cinema.index'));
     }
 
     public function render()

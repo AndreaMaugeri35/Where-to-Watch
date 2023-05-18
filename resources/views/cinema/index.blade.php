@@ -1,4 +1,23 @@
 <x-layout header="Tutti i nostri Cinema">
+
+    @if (session()->has('cinemaUpdated'))
+        <div class="alert alert-success text-center">
+            {{ session('cinemaUpdated') }}
+        </div>
+    @endif
+
+    @if (session()->has('cinemaDeleted'))
+        <div class="alert alert-success text-center">
+            {{ session('cinemaDeleted') }}
+        </div>
+    @endif
+
+    @if (session()->has('cinemaCreated'))
+        <div class="alert alert-success text-center">
+            {{ session('cinemaCreated') }}
+        </div>
+    @endif
+
     @forelse($cinemas as $cinema)
         <div class="container my-5">
             <div class="row justify-content-center">

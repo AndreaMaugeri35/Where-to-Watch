@@ -1,5 +1,5 @@
 <div>
-    <form class="p-5 border" wire:submit.prevent="update">
+    <form class="p-5 border bg-white form-control" wire:submit.prevent="update">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -49,7 +49,8 @@
             <textarea wire:model="description" id="description" cols="30" rows="7" class="form-control"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-dark">Aggiorna la libreria</button>
+        <button type="submit" class="btn btn-dark">Aggiorna</button>
         <a href="{{ route('cinema.show', compact('cinema')) }}" class="mx-3 btn btn-outline-dark">Torna indietro</a>
+        <button type="button" class="btn btn-danger" wire:click="destroy">Cancella</button>
     </form>
 </div>
