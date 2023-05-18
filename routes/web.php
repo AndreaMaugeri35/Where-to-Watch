@@ -20,5 +20,5 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/cinema/index', [CinemaController::class, 'index'])->name('cinema.index');
 Route::get('/cinema/create', [CinemaController::class, 'create'])->name('cinema.create');
 Route::get('/cinema/show/{cinema}', [CinemaController::class, 'show'])->name('cinema.show');
-
+Route::get('/cinema/edit/{cinema}', [CinemaController::class, 'edit'])->name('cinema.edit');
 
