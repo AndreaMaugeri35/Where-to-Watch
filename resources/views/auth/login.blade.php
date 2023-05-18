@@ -27,8 +27,8 @@
                   <input type="password" name="password" class="form-control" id="password">
                 </div>
                 <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="checkbox">
-                  <label class="form-check-label" for="checkbox">Ricordami</label>
+                    <label class="form-check-label"  for="remember">Ricordami</label>
+                    <input type="checkbox" name="remember" class="form-check-input" id="remember">
                 </div>
                 <button type="submit" class="btn btn-primary">Accedi</button>
                 <p class="mt-2">Non sei ancora registrato? Fai la <a href="{{route('register')}}">Registrazione</a></p> 
