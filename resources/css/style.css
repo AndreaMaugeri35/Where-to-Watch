@@ -10,6 +10,7 @@ body{
     background-image: url('https://www.valseriana.eu/wp-content/uploads/2016/10/cinemasala.jpg');
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .cardCustom{
