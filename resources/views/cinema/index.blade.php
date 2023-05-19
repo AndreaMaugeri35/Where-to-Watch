@@ -39,7 +39,7 @@
                 <a href="{{route('cinema.create')}}" class="btn btn-warning ">Aggiungi cinema</a>
             </div>
             @endforelse
-            @auth
+            {{-- @auth
             @if (count($cinemas))
             <div class="col-8 d-flex justify-content-center">
                     
@@ -50,7 +50,7 @@
                 </form>            
             </div>
             @endif
-            @endauth
+            @endauth --}}
         </div>
     </div>
     

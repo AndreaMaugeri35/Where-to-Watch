@@ -51,6 +51,8 @@
 
         <button type="submit" class="btn btn-warning">Aggiorna</button>
         <a href="{{ route('cinema.show', compact('cinema')) }}" class="mx-3 btn btn-outline-dark">Torna indietro</a>
-        <button type="button" class="btn btn-danger" wire:click="destroy">Cancella</button>
+        @if ($cinema->user_id == Auth::user()->id)
+            <button type="button" class="btn btn-danger" wire:click="destroy">Cancella</button>
+        @endif
     </form>
 </div>
