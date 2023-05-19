@@ -2,6 +2,16 @@
     
     <div class="container">
         <div class="row justify-content-center blur">
+            @if (count(Auth::user()->cinemas))
+                <div class="col-12 d-flex justify-content-end">
+                        
+                    <form action="{{ROUTE('cinema.profile.delete')}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger my-3">Elimina tutti i tuoi cinema</button>
+                    </form>            
+                </div>
+            @endif
             @forelse (Auth::user()->cinemas as $cinema)
             <div class="col-12 col-md-3 p-3">
                 <div class="card my-3 justify-content-evenly">
@@ -14,16 +24,6 @@
                     </div>
                 </div>
             </div>
-            @if (count(Auth::user()->cinemas))
-            <div class="col-8 d-flex justify-content-center">
-                    
-                <form action="{{ROUTE('cinema.profile.delete')}}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger my-3">Elimina tutti i tuoi cinema</button>
-                </form>            
-            </div>
-            @endif
             @empty
                 <div class="col-12 col-md-8 d-flex justify-content-center">
                     <a href="{{route('cinema.create')}}" class="btn btn-warning ">Aggiungi cinema</a>
@@ -31,5 +31,4 @@
             @endforelse
         </div>
     </div>  
-    
 </x-layout>

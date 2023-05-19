@@ -1,3 +1,3 @@
-<x-layout title="Benvenuto!" header="Benveuti nel nostro sito!">
+<x-layout title="Benvenuto!" header="Benvenuti sul nostro sito!">
 
 </x-layout>
