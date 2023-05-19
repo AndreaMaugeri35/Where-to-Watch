@@ -24,4 +24,5 @@ Route::get('/cinema/show/{cinema}', [CinemaController::class, 'show'])->name('ci
 Route::get('/cinema/edit/{cinema}', [CinemaController::class, 'edit'])->name('cinema.edit');
 Route::delete('/cinema/delete', [CinemaController::class, 'destroy'])->name('cinema.delete');
 Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
+Route::delete('/cinema/profile/delete', [UserController::class, 'destroy'])->name('cinema.profile.delete');
 

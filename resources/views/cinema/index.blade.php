@@ -19,12 +19,12 @@
     </div>
     @endif
     
-    <div class="container-fluid paddingCustom">
-        <div class="row justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center blur">
            
             @forelse($cinemas as $cinema)
-            <div class="col-12 col-md-3">
-                <div class="card my-3 justify-content-evenly blur">
+            <div class="col-12 col-md-3  p-3">
+                <div class="card my-3 justify-content-evenly ">
                     <img src="{{Storage::url($cinema->image)}}" class="cardCustom card-img-top img-fluid" alt="{{$cinema->name}}">
                     <p class="card-text text-muted fst-italic p-2">{{$cinema->address}}</p>
                     <div class="card-body">
@@ -46,7 +46,7 @@
                 <form action="{{ROUTE('cinema.delete')}}" method="POST">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-danger">Elimina tutto</button>
+                    <button type="submit" class="btn btn-danger my-3">Elimina tutto</button>
                 </form>            
             </div>
             @endif
