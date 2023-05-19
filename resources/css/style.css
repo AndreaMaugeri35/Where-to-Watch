@@ -44,3 +44,12 @@ body{
     width: 50px;
 
 }
+
+#mygif{
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #mygif.fade-out {
+    opacity: 0;
+  }

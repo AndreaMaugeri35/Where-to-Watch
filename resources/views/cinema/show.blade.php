@@ -1,7 +1,7 @@
 <x-layout title="{{$cinema->name}}" header="{{$cinema->name}}">
 
     <div class="container my-5">
-        <div class=" row justify-content-center">
+        <div data-aos="zoom-out" class=" row justify-content-center">
             <div class="col-12 col-md-7">
                 <div class="card">
                     <img src="{{Storage::url($cinema->image)}}" class="card-img-top" alt="{{$cinema->name}}">

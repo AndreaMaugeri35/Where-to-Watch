@@ -35,7 +35,7 @@ class CinemaCreateForm extends Component
 
         session()->flash('cinemaCreated','Hai creato il tuo cinema');
         $this->reset();
-
+        return redirect(route('cinema.index'));
     }
 
     public function render()

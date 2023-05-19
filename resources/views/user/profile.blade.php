@@ -11,9 +11,9 @@
                 </form>            
             </div>
         @endif
-        <div class="row justify-content-center blur my-4">
+        <div data-aos="zoom-in" class="row justify-content-center blur my-4">
             @forelse (Auth::user()->cinemas as $cinema)
-            <div class="col-12 col-md-3 p-3">
+            <div data-aos="fade-down" data-aos-delay="{{100*$loop->index}}"  class="col-12 col-md-3 p-3">
                 <div class="card my-3 justify-content-evenly">
                     <img src="{{Storage::url($cinema->image)}}" class="cardCustom card-img-top img-fluid" alt="{{$cinema->name}}">
                     <p class="card-text text-muted fst-italic p-2">{{$cinema->address}}</p>

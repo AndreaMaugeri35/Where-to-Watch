@@ -1,6 +1,6 @@
 <div>
     <div class="container p-5">
-        <div class="row justify-content-center">
+        <div data-aos="zoom-in" class="row justify-content-center">
             <div class="col-12 col-md-8">
             <form class="shadow p-5 bg-white rounded" wire:submit.prevent="store">
 
