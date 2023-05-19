@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    <title>Document</title>
+    <title>{{$title}}</title>
 </head>
 <body>
     <x-navbar>

@@ -1,5 +1,5 @@
 
-<x-layout header="Pagina di Registrazione">
+<x-layout title="Regustrati" header="Pagina di Registrazione">
 
     <div class="container p-5">
         <div class="row justify-content-center">

@@ -15,15 +15,27 @@ class CinemaCreateForm extends Component
     public function store(){
         $cinema= Auth::user();
         
+        if ($this->image) {
+        
         $cinema->cinemas()->create([
             'name'=>$this->name,
             'address'=>$this->address,
             'image'=>$this->image->store('public/images'),
             'description'=>$this->description,
         ]);
+        } else {
+
+            $cinema->cinemas()->create([
+                'name'=>$this->name,
+                'address'=>$this->address,
+                'description'=>$this->description,
+            ]);
+
+        }
+
         session()->flash('cinemaCreated','Hai creato il tuo cinema');
         $this->reset();
-        
+
     }
 
     public function render()

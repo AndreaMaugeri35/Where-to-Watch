@@ -10,3 +10,36 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
+.cardCustom{
+
+    height: 300px;
+
+}
+/* 
+.card{
+
+    height: 400px;
+
+} */
+
+.paddingCustom{
+
+    padding: 10%;
+    padding-top: 5%;
+    backdrop-filter: blur(5px);
+
+}
+
+.blur{
+
+    backdrop-filter: blur(10px);
+   
+
+}
+
+.logo{
+
+    width: 50px;
+
+}

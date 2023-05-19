@@ -1,5 +1,5 @@
 
-<x-layout header="Pagina di Accesso">
+<x-layout title="Accesso" header="Pagina di Accesso">
 
     <div class="container p-5">
         <div class="row justify-content-center">

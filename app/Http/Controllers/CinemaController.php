@@ -55,8 +55,19 @@ class CinemaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cinema $cinema)
+    public function destroy()
     {
-        //
+        $cinemas = Cinema::all();
+        
+        foreach ($cinemas as $cinema) {
+
+            $cinema->delete();
+
+
+        }
+
+        // $cinemas = Cinema::all();
+        return redirect(route('cinema.index'));
+
     }
 }

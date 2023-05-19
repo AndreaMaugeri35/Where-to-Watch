@@ -1,4 +1,4 @@
-<x-layout header="{{$cinema->name}}">
+<x-layout title="{{$cinema->name}}" header="{{$cinema->name}}">
 
     <div class="container my-5">
         <div class=" row justify-content-center">

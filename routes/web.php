@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CinemaController;
 use App\Http\Controllers\PublicController;
 
@@ -21,4 +22,6 @@ Route::get('/cinema/index', [CinemaController::class, 'index'])->name('cinema.in
 Route::get('/cinema/create', [CinemaController::class, 'create'])->name('cinema.create');
 Route::get('/cinema/show/{cinema}', [CinemaController::class, 'show'])->name('cinema.show');
 Route::get('/cinema/edit/{cinema}', [CinemaController::class, 'edit'])->name('cinema.edit');
+Route::delete('/cinema/delete', [CinemaController::class, 'destroy'])->name('cinema.delete');
+Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
 
