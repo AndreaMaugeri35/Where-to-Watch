@@ -49,7 +49,7 @@
             <textarea wire:model="description" id="description" cols="30" rows="7" class="form-control"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-dark">Aggiorna</button>
+        <button type="submit" class="btn btn-warning">Aggiorna</button>
         <a href="{{ route('cinema.show', compact('cinema')) }}" class="mx-3 btn btn-outline-dark">Torna indietro</a>
         <button type="button" class="btn btn-danger" wire:click="destroy">Cancella</button>
     </form>

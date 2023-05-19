@@ -1,17 +1,17 @@
 <x-layout title="Il tuo profilo" header="Il tuo profilo">
     
-    <div class="container">
-        <div class="row justify-content-center blur">
-            @if (count(Auth::user()->cinemas))
-                <div class="col-12 d-flex justify-content-end">
-                        
-                    <form action="{{ROUTE('cinema.profile.delete')}}" method="POST">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger my-3">Elimina tutti i tuoi cinema</button>
-                    </form>            
-                </div>
-            @endif
+    <div class="container py-3">
+        @if (count(Auth::user()->cinemas))
+            <div class="col-12 d-flex justify-content-end">
+                    
+                <form action="{{ROUTE('cinema.profile.delete')}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger my-3">Elimina tutti i tuoi cinema</button>
+                </form>            
+            </div>
+        @endif
+        <div class="row justify-content-center blur my-4">
             @forelse (Auth::user()->cinemas as $cinema)
             <div class="col-12 col-md-3 p-3">
                 <div class="card my-3 justify-content-evenly">

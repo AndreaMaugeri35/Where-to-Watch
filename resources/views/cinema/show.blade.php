@@ -9,8 +9,8 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$cinema->name}}</h5>
                       <p class="card-text">{{$cinema->description}}</p>
-                      <a href="{{route('cinema.index')}}" class="btn btn-primary">Torna indietro</a>
-                      <a href="{{route('cinema.edit', compact('cinema'))}}" class="btn btn-primary">Modifica</a>
+                      <a href="{{route('cinema.index')}}" class="btn btn-outline-dark">Torna indietro</a>
+                      <a href="{{route('cinema.edit', compact('cinema'))}}" class="btn btn-warning">Modifica</a>
                     </div>
                 </div>
             </div>
