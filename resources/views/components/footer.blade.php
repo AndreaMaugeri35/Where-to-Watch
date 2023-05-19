@@ -27,13 +27,16 @@
   
       <!-- Section: Form -->
       <section class="">
-        <form action="">
+        <form action="{{route('contact_us')}}" method="POST">
           <!--Grid row-->
+          @csrf
+
+          
           <div class="row d-flex justify-content-center">
             <!--Grid column-->
             <div class="col-auto">
               <p class="pt-2">
-                <strong>Sign up for our newsletter</strong>
+                <strong>Rimani aggiornato con la nostra newsletter!</strong>
               </p>
             </div>
             <!--Grid column-->
@@ -42,8 +45,8 @@
             <div class="col-md-5 col-12">
               <!-- Email input -->
               <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control" />
-                <label class="form-label" for="form5Example2">Email address</label>
+                <input type="email" name="mail" id="mail" class="form-control" />
+                <label class="form-label" for="mail">Indirizzo e-mail</label>
               </div>
             </div>
             <!--Grid column-->
@@ -53,7 +56,7 @@
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-outline-dark mb-4">
-                Subscribe
+                Iscriviti!
               </button>
             </div>
             <!--Grid column-->

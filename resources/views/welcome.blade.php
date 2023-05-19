@@ -1,19 +1,27 @@
 <x-layout title="Benvenuto!" header="Benvenuti sul nostro sito!">
+    @if (session('emailError'))
+    <div class="alert alert-danger text-center">
+        {{session('emailError')}}
+    </div>
+    @endif
+    
+    @if (session('emailSent'))
+    <div class="alert alert-success text-center">
+        {{session('emailSent')}}
+    </div>
+    @endif
+
+    @if (!$c)
     <div class="container" id="mygif">
         <div data-aos="zoom-in" class="row justify-content-center">
             <img class="" src="/media/countdown.gif" alt="">
         </div>
     </div>
+    @endif
 
+    <div class="min-vh-100">
 
-    <script>
-        document.getElementById("mygif").style.display = "block";
-        setTimeout(function() {
-            document.getElementById("mygif").classList.add("fade-out");
-        }, 2000);
-        setTimeout(function() {
-            document.getElementById("mygif").style.display = "none";
-        }, 5000)
-    </script>
+    </div>
+
 
 </x-layout>

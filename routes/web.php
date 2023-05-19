@@ -17,6 +17,9 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+Route::get('/homepage', [PublicController::class, 'homepage1'])->name('homepage1');
+
+Route::post('/contattaci', [PublicController::class, 'contact_us'])->name('contact_us');
 
 Route::get('/cinema/index', [CinemaController::class, 'index'])->name('cinema.index');
 Route::get('/cinema/create', [CinemaController::class, 'create'])->name('cinema.create');
