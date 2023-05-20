@@ -8,6 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     <title>{{$title}}</title>
+    <link rel="shortcut icon" href="/media/logo.png" type="image/x-icon">
 </head>
 <body>
     <x-navbar>

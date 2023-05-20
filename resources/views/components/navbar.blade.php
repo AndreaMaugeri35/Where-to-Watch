@@ -14,14 +14,17 @@
             <a class="nav-link @if(Route::is('cinema.index')) active @endif" href="{{route('cinema.index')}}">I nostri Cinema</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link @if(Route::is('cinema.create')) active @endif" href="{{route('cinema.create')}}">Aggiungi Cinema</a>
+            <a class="nav-link  @if(Route::is('cinema.create')) active @endif" href="{{route('cinema.create')}}">Aggiungi Cinema</a>
           </li>
-
+        </ul>
+        <ul class="navbar-nav">
           @auth
+          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ciao {{Auth::user()->name}}
-            </a>
+            <div class="btn-group dropstart">
+              <button type="button" class="btn btn-warning" data-bs-toggle="dropdown" aria-expanded="false">
+                Ciao {{Auth::user()->name}}
+              </button>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item btn btn-outline-warning" href="{{route('user.profile')}}">Profilo</a></li>
               <li><hr class="dropdown-divider bg-warning"></li>
@@ -29,17 +32,51 @@
               <form id="form-logout" action="{{route('logout')}}" method="POST" class="d-none">@csrf</form>
             </ul>
           </li>
+        </div>
           @else    
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ciao Ospite
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item btn btn-outline-warning" href="{{route('login')}}">Accedi</a></li>
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-warning" data-bs-toggle="dropdown" aria-expanded="false">
+              Ciao ospite
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark wcust">
+              
+              
+              <form class="shadow p-5 bg-dark text-white rounded dropdown" action="{{route('login')}}" method="POST">
+
+                <p class="display-6">Accedi</p>
+
+                @csrf
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Indirizzo Email</label>
+                  <input type="email" name="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" id="password">
+                </div>
+                <div class="mb-3 form-check">
+                    <label class="form-check-label"  for="remember">Ricordami</label>
+                    <input type="checkbox" name="remember" class="form-check-input" id="remember">
+                </div>
+                <button type="submit" class="btn btn-warning">Accedi</button> 
+              </form>
+
               <li><hr class="dropdown-divider bg-warning"></li>
               <li><a class="dropdown-item btn btn-outline-warning" href="{{route('register')}}">Registrati</a></li>
             </ul>
           </li>
+          </div>
           @endauth
         </ul>
       </div>
