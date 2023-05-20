@@ -25,8 +25,8 @@ cards.forEach ((card, i) => {
 
 setTimeout(function() {
     document.querySelector("#mygif").classList.add("d-none");
-}, 3000);
+}, 4300);
 setTimeout(function() {
     document.querySelector("#mygif").classList.add("fade-out");
-}, 2000);
+}, 3300);
 

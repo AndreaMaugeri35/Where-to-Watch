@@ -7,15 +7,15 @@
 
 }
 body{
-    background-image: url('https://www.valseriana.eu/wp-content/uploads/2016/10/cinemasala.jpg');
+    background-image: url('/public/media/Sfondo.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 }
 
 .imgCustom{
     
-    height: 300px;
+    /* height: 300px; */
     /* width: 300px; */
 
 }
@@ -76,5 +76,12 @@ body{
 .gifCustom{
 
     width: 100vw;
+
+}
+
+#colCustom{
+
+    border-radius: 15px;
+    border: 2px solid #FFC107;
 
 }

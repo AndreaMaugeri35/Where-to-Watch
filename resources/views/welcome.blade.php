@@ -13,15 +13,15 @@
 
     @if (!$c)
     <div class="d-flex justify-content-center" id="mygif">
-            <img class="gifCustom" src="/media/countdown.gif" alt="">
+            <img class="gifCustom" src="/media/GifCinema.gif" alt="">
     </div>
     @endif
 
     <div class="container py-5">
         <div data-aos="zoom-in" class="row justify-content-center blur">
             @foreach($movies as $movie)
-            <div data-aos="fade-down" class="col-12 col-md-3  p-3">
-                <div class="card cardCustom my-3 justify-content-evenly   ">
+            <div class="col-12 col-md-3  p-3">
+                <div class="card bg-transparent cardCustom my-3 justify-content-evenly   ">
                     <div class="d-flex position-relative">
                         <img src="{{$movie->poster}}" class="imgCustom card-img-top img-fluid" alt="{{$movie->title}}">
                         <div class="w-100 position-absolute btnCustom d-flex justify-content-center h-50 align-items-center">
@@ -29,8 +29,8 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{$movie->title}}</h5>
-                        <p class="card-text">{{$movie->genre}}</p>
+                        <h5 class="card-title text-white">{{$movie->title}}</h5>
+                        <p class="card-text text-white">{{$movie->genre}}</p>
                         <a href="{{route('movie.show',compact('movie'))}}" class="btn btn-warning">Maggiori dettagli</a>
                     </div>
                 </div>
