@@ -12,10 +12,8 @@
     @endif
 
     @if (!$c)
-    <div class="container" id="mygif">
-        <div data-aos="zoom-in" class="row justify-content-center">
-            <img class="" src="/media/countdown.gif" alt="">
-        </div>
+    <div class="d-flex justify-content-center" id="mygif">
+            <img class="gifCustom" src="/media/countdown.gif" alt="">
     </div>
     @endif
 
@@ -23,8 +21,13 @@
         <div data-aos="zoom-in" class="row justify-content-center blur">
             @foreach($movies as $movie)
             <div data-aos="fade-down" class="col-12 col-md-3  p-3">
-                <div class="card my-3 justify-content-evenly ">
-                    <img src="{{$movie->poster}}" class="cardCustom card-img-top img-fluid" alt="{{$movie->title}}">
+                <div class="card cardCustom my-3 justify-content-evenly   ">
+                    <div class="d-flex position-relative">
+                        <img src="{{$movie->poster}}" class="imgCustom card-img-top img-fluid" alt="{{$movie->title}}">
+                        <div class="w-100 position-absolute btnCustom d-flex justify-content-center h-50 align-items-center">
+                            <a class="aCustom d-none"><button class="btn btn-outline-warning">Guarda il Trailer</button></a> 
+                        </div>
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">{{$movie->title}}</h5>
                         <p class="card-text">{{$movie->genre}}</p>
@@ -36,5 +39,29 @@
         </div>
     </div>
 
+    {{-- <script>
+        
+let btns = document.querySelectorAll('.aCustom');
+let cards = document.querySelectorAll('.cardCustom');
+
+cards.forEach ((card, i) => {
+    console.log(cards);
+
+    card.addEventListener('mouseenter', ()=>{
+
+        btns[i].classList.remove('d-none');
+
+    })
+
+    card.addEventListener('mouseleave', ()=>{
+
+        btns[i].classList.add('d-none');
+
+    })
+    
+});
+    </script> --}}
+
+   
 
 </x-layout>

@@ -23,6 +23,16 @@ class CinemaCreateForm extends Component
             'image'=>$this->image->store('public/images'),
             'description'=>$this->description,
         ]);
+        
+        // public function __construct($newName, $newAddress, $newImage, $newDescription)
+        // {
+            // $this->name = $newName;
+            // $this->address = $newAddress;
+            // $this->image = $newImage;
+            // $this->description = $newDescription;
+        // }
+        // new Cinema($name, $address, $image, $description);
+
         } else {
 
             $cinema->cinemas()->create([

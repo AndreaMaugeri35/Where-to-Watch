@@ -1,11 +1,32 @@
 // console.log('ciaone');
 
 
+let btns = document.querySelectorAll('.aCustom');
+let cards = document.querySelectorAll('.cardCustom');
 
-document.getElementById("mygif").style.display = "block";
+cards.forEach ((card, i) => {
+
+    card.addEventListener('mouseenter', ()=>{
+
+        btns[i].classList.remove('d-none');
+
+    })
+
+    card.addEventListener('mouseleave', ()=>{
+
+        btns[i].classList.add('d-none');
+
+    })
+    
+    console.log(cards);
+});
+
+
+
 setTimeout(function() {
-    document.getElementById("mygif").classList.add("fade-out");
-}, 2000);
-setTimeout(function() {
-    document.getElementById("mygif").style.display = "none";
+    document.querySelector("#mygif").classList.add("d-none");
 }, 3000);
+setTimeout(function() {
+    document.querySelector("#mygif").classList.add("fade-out");
+}, 2000);
+

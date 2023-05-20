@@ -21,7 +21,7 @@
           @auth
           
           <li class="nav-item dropdown">
-            <div class="btn-group dropstart">
+            <div class="dropstart">
               <button type="button" class="btn btn-warning" data-bs-toggle="dropdown" aria-expanded="false">
                 Ciao {{Auth::user()->name}}
               </button>
@@ -34,7 +34,7 @@
           </li>
         </div>
           @else    
-          <div class="btn-group dropstart">
+          <div class="dropstart">
             <button type="button" class="btn btn-warning" data-bs-toggle="dropdown" aria-expanded="false">
               Ciao ospite
             </button>

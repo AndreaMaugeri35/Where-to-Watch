@@ -13,9 +13,10 @@ body{
     background-position: center;
 }
 
-.cardCustom{
+.imgCustom{
     
     height: 300px;
+    /* width: 300px; */
 
 }
 /* 
@@ -47,14 +48,33 @@ body{
 }
 
 #mygif{
-    opacity: 1;
+    position: absolute;
     transition: opacity 1s ease-in-out;
+    z-index: 1;
+    width: 100vw;
+
+    
   }
 
-#mygif.fade-out {
+.fade-out{
     opacity: 0;
-  }
+}
+
+
 
 .wcust{
     width: 300%;
+}
+
+.btnCustom{
+
+    right: 0%;
+    bottom: 0%;
+   
+}
+
+.gifCustom{
+
+    width: 100vw;
+
 }
