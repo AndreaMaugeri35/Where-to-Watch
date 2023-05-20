@@ -1,4 +1,4 @@
-<x-layout title="Benvenuto!" header="Benvenuti sul nostro sito!">
+<x-layout title="Benvenuto!" header="I Film del momento">
     @if (session('emailError'))
     <div class="alert alert-danger text-center">
         {{session('emailError')}}

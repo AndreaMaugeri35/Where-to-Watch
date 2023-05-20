@@ -42,7 +42,7 @@ body{
 
 .logo{
 
-    width: 50px;
+    width: 30px;
 
 }
 
@@ -54,3 +54,11 @@ body{
 #mygif.fade-out {
     opacity: 0;
   }
+
+  /* .whereto{
+    background-image: url('/public/media/wheretowatch.jpg');
+    min-height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+  } */
