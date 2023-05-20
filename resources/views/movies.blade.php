@@ -1,4 +1,4 @@
-<x-layout title="Benvenuto!" header="I Film del momento">
+<x-layout title="Tutti i Film" header="Tutti i Film">
     @if (session('emailError'))
     <div class="alert alert-danger text-center">
         {{session('emailError')}}
@@ -8,12 +8,6 @@
     @if (session('emailSent'))
     <div class="alert alert-success text-center">
         {{session('emailSent')}}
-    </div>
-    @endif
-
-    @if (!$c)
-    <div class="d-flex justify-content-center" id="mygif">
-            <img class="gifCustom" src="/media/GifCinema.gif" alt="">
     </div>
     @endif
 
@@ -35,33 +29,8 @@
                     </div>
                 </div>
             </div>
-
-
-
-            
             @endforeach
         </div>
     </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        @foreach($movies as $movie)
-                            <div class="swiper-slide position-relative d-flex">                               
-                                <img class="h-100 w-100" src="{{$movie->cover}}" alt="">
-                                <div class="w-100 position-absolute d-flex flex-column justify-content-end h-100 align-items-center">
-                                    <a href="{{route('movie.show',compact('movie'))}}" class="h-100 w-100"></a>
-                                    <h5 class="text-white display-3">{{$movie->title}}</h5>
-                                    <p class="text-white">{{$movie->description}}</p> 
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                  </div>               
-            </div>
-        </div>
-    </div>
-
 
 </x-layout>

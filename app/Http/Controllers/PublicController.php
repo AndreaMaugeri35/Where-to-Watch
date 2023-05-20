@@ -15,17 +15,23 @@ class PublicController extends Controller
 
     public function homepage(){
         $c = false;
-        $movies= Movie::all();
+        $movies= Movie::all()->take(4);
         return view('welcome', compact('c', 'movies'));
     }
 
     public function homepage1(){
         
         $c = true;
-        $movies= Movie::all();
+        $movies= Movie::all()->take(4);
         return view('welcome', compact('c', 'movies'));
 
     }
+
+    public function all_movies(){
+        $movies= Movie::all();
+        return view('movies', compact('movies'));
+    }
+
 
     public function show(Movie $movie)
     {

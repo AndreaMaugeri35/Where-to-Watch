@@ -18,6 +18,8 @@ use App\Http\Controllers\PublicController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/homepage', [PublicController::class, 'homepage1'])->name('homepage1');
+Route::get('/movies', [PublicController::class, 'all_movies'])->name('movies');
+
 
 Route::post('/contattaci', [PublicController::class, 'contact_us'])->name('contact_us');
 Route::get('/movie/show/{movie}', [PublicController::class, 'show'])->name('movie.show');
