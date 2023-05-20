@@ -20,6 +20,8 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/homepage', [PublicController::class, 'homepage1'])->name('homepage1');
 
 Route::post('/contattaci', [PublicController::class, 'contact_us'])->name('contact_us');
+Route::get('/movie/show/{movie}', [PublicController::class, 'show'])->name('movie.show');
+
 
 Route::get('/cinema/index', [CinemaController::class, 'index'])->name('cinema.index');
 Route::get('/cinema/create', [CinemaController::class, 'create'])->name('cinema.create');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\Movie;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -14,16 +15,21 @@ class PublicController extends Controller
 
     public function homepage(){
         $c = false;
-        $d = 5;
-        return view('welcome', compact('c', 'd'));
+        $movies= Movie::all();
+        return view('welcome', compact('c', 'movies'));
     }
 
     public function homepage1(){
         
         $c = true;
-        $d = 5;
-        return view('welcome', compact('c', 'd'));
+        $movies= Movie::all();
+        return view('welcome', compact('c', 'movies'));
 
+    }
+
+    public function show(Movie $movie)
+    {
+        return view('movieShow',compact('movie'));
     }
 
     public function contact_us(Request $request){
