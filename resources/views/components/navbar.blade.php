@@ -43,7 +43,7 @@
               
               <form class="shadow p-5 bg-dark text-white rounded dropdown" action="{{route('login')}}" method="POST">
 
-                <p class="display-6">Accedi</p>
+                <p class="display-6">Accedi!</p>
 
                 @csrf
 
