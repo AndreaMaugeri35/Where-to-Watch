@@ -44,7 +44,18 @@
             <label for="image" class="form-label">Foto libreria</label>
             <input type="file" wire:model="image" class="form-control" id="image">
         </div>
-<div class="mb-3">
+        <hr>
+                <div class="mb-3">
+                  <label for="avaible_movies" class="form-label">Film Disponibili</label><br>
+                  @foreach($movies as $movie)
+                      <div class="d-flex">
+                          <input id="movie_{{$movie->id}}" type="checkbox" wire:model="avaible_movies" value="{{$movie->id}}">
+                          <label for="movie_{{$movie->id}}"  class="ms-3">{{$movie->title}}</label>
+                      </div>
+                  @endforeach
+                </div>
+        <hr>
+        <div class="mb-3">
             <label for="description" class="form-label">Piccola descrizione</label>
             <textarea wire:model="description" id="description" cols="30" rows="7" class="form-control"></textarea>
         </div>
