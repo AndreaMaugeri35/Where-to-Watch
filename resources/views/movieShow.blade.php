@@ -23,6 +23,15 @@
                         @endforeach
                           <hr>
                       @endif
+                      @auth
+                        <form method="POST" action="{{route('like',compact('movie'))}}">
+                            @method('put')
+                            @csrf
+                            <button  type="submit" class="btn btn-primary my-3">{{$movie->like}} Mi piace</button>
+                        </form>
+                       @else
+                       <a href="{{route('login')}}" class="btn btn-primary my-3">{{$movie->like}} Mi piace</a>
+                      @endauth
                       <a href="{{route('homepage1')}}" class="btn btn-outline-warning">Torna indietro</a>
                     </div>
                 </div>

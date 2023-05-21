@@ -38,6 +38,23 @@ class PublicController extends Controller
         return view('movieShow',compact('movie'));
     }
 
+
+
+    public function like(Movie $movie){
+       
+        $movie->like = $movie->like+=1;
+        $movie->save(['timestamps' => false]);   
+        // $movie->save([
+        //     'like'=>$movie->like+=1
+        // ],['timestamps' => false]);
+        return redirect(route('movie.show',compact('movie')));
+    }
+
+
+
+
+
+
     public function contact_us(Request $request){
 
         $mail = $request->mail;

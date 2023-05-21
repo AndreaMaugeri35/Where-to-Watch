@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Movie extends Model
 {
+    public $timestamps = false;
     use HasFactory;
 
     protected $fillable=[
@@ -18,7 +19,8 @@ class Movie extends Model
         'genre',
         'description',
         'cover',    
-        'poster',   
+        'poster',
+        'like',   
 
     ];
 
