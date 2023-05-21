@@ -11,6 +11,8 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
+    overflow-x: hidden;
+
 }
 
 
@@ -42,7 +44,7 @@ h1{
 #mygif{
     position: absolute;
     transition: opacity 1s ease-in-out;
-    z-index: 1;
+    z-index: 3;
     width: 100vw;
 
     
