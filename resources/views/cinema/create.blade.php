@@ -1,5 +1,6 @@
-<x-layout title="Crea un cinema" header="Aggiungi Il tuo cinema preferito">
+<x-layout title="Crea un cinema" header="Aggiungi Il tuo cinema">
 
-    @livewire('cinema-create-form')
-
+    <div data-aos="zoom-in"  class="">
+        @livewire('cinema-create-form')
+    </div>
 </x-layout>

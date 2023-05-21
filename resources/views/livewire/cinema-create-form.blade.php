@@ -1,6 +1,6 @@
 <div>
     <div class="container p-5">
-        <div data-aos="zoom-in" class="row justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-8">
             <form class="shadow p-5 bg-white rounded" wire:submit.prevent="store">
 
@@ -41,6 +41,17 @@
                     <label for="image" class="form-label">Inserisci la tua immagine</label>
                     <input type="file" wire:model="image" class="form-control" id="image">
                 </div>
+                <hr>
+                <div class="mb-3">
+                  <label for="avaible_movies" class="form-label">Film Disponibili</label><br>
+                  @foreach($movies as $movie)
+                      <div class="d-flex">
+                          <input id="movie_{{$movie->id}}" type="checkbox" wire:model="avaible_movies" value="{{$movie->id}}">
+                          <label for="movie_{{$movie->id}}"  class="ms-3">{{$movie->title}}</label>
+                      </div>
+                  @endforeach
+                </div>
+                <hr>
                 <div class="mb-3">
                   <label for="description" class="form-label">Descrizione</label>
                   <textarea wire:model="description" id="description" cols="30" rows="7" class="form-control"></textarea>

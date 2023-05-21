@@ -15,6 +15,14 @@
                       <h5 class="card-title text-white">{{$movie->title}}</h5>
                       <p class="card-text text-muted">{{$movie->genre}}</p>
                       <p class="card-text text-white">{{$movie->description}}</p>
+                      @if ($movie->cinemas)
+                      <hr>
+                        <h6 class="text-white fs-5">Disponibile presso i seguenti cinema:</h6>
+                        @foreach ($movie->cinemas as $cinema)
+                              <p class="text-white my-1">{{$cinema->name}}</p>
+                        @endforeach
+                          <hr>
+                      @endif
                       <a href="{{route('homepage1')}}" class="btn btn-outline-warning">Torna indietro</a>
                     </div>
                 </div>

@@ -24,8 +24,9 @@
                 <div class="card bg-transparent cardCustom my-3 justify-content-evenly   ">
                     <div class="d-flex position-relative">
                         <img src="{{$movie->poster}}" class="imgCustom card-img-top img-fluid" alt="{{$movie->title}}">
-                        <div class="w-100 position-absolute btnCustom d-flex justify-content-center h-50 align-items-center">
-                            <a class="aCustom d-none"><button class="btn btn-outline-warning">Guarda il Trailer</button></a> 
+                        <div class="w-100 position-absolute btnCustom d-flex  justify-content-center h-100 align-items-center">
+                            <a href="{{route('movie.show',compact('movie'))}}" class="h-100 w-100"></a>
+                            <a href="https://www.youtube.com/" class="position-absolute align-self-end mb-5 aCustom d-none"><button class="btn btn-outline-warning">Guarda il Trailer</button></a> 
                         </div>
                     </div>
                     <div class="card-body">

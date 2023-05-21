@@ -34,7 +34,7 @@ class PublicController extends Controller
 
 
     public function show(Movie $movie)
-    {
+    {   
         return view('movieShow',compact('movie'));
     }
 

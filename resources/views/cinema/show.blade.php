@@ -9,6 +9,14 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$cinema->name}}</h5>
                       <p class="card-text">{{$cinema->description}}</p>
+                      @if ($cinema->movies)
+                      <hr>
+                      <h6>Film disponibili</h6>
+                          @foreach ($cinema->movies as $movie)
+                              <p class="my-1">{{$movie->title}}</p>
+                          @endforeach
+                          <hr>
+                      @endif
                       <a href="{{route('cinema.index')}}" class="btn btn-outline-dark">Torna indietro</a>
                       <a href="{{route('cinema.edit', compact('cinema'))}}" class="btn btn-warning">Modifica</a>
                     </div>

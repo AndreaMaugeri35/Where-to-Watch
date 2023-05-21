@@ -90,3 +90,6 @@ h5{
 .swiper-button-next{
     color: #FFC107;
 }
+.aCustom{
+    z-index: 2;
+}

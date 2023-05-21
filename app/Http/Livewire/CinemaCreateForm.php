@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Movie;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
@@ -10,19 +11,21 @@ class CinemaCreateForm extends Component
 {
     use WithFileUploads;
 
-    public $name, $address ,$description ,$image ;
-
+    public $name, $address ,$description ,$image;
+    public  $avaible_movies= [] ;
     public function store(){
         $cinema= Auth::user();
         
         if ($this->image) {
         
-        $cinema->cinemas()->create([
+        $mycinema = $cinema->cinemas()->create([
             'name'=>$this->name,
             'address'=>$this->address,
             'image'=>$this->image->store('public/images'),
             'description'=>$this->description,
         ]);
+
+        $mycinema->movies()->attach($this->avaible_movies);
         
         // public function __construct($newName, $newAddress, $newImage, $newDescription)
         // {
@@ -35,11 +38,13 @@ class CinemaCreateForm extends Component
 
         } else {
 
-            $cinema->cinemas()->create([
+            $mycinema = cinema->cinemas()->create([
                 'name'=>$this->name,
                 'address'=>$this->address,
                 'description'=>$this->description,
             ]);
+
+            $mycinema->movies()->attach($this->avaible_movies);
 
         }
 
@@ -50,6 +55,7 @@ class CinemaCreateForm extends Component
 
     public function render()
     {
-        return view('livewire.cinema-create-form');
+        $movies=Movie::all();
+        return view('livewire.cinema-create-form', compact('movies'));
     }
 }
