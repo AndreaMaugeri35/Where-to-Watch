@@ -58,7 +58,9 @@
                             </div>
                         @endforeach
                     </div>
-                  </div>               
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>               
+                </div>
             </div>
         </div>
     </div>

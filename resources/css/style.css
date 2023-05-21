@@ -13,18 +13,10 @@ body{
     background-position: bottom;
 }
 
-.imgCustom{
-    
-    /* height: 300px; */
-    /* width: 300px; */
 
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* 
-.card{
-
-    height: 400px;
-
-} */
 
 .paddingCustom{
 
@@ -90,4 +82,11 @@ body{
 
 h5{
     z-index: 1;   
+}
+
+.swiper-button-prev{
+    color: #FFC107;
+}
+.swiper-button-next{
+    color: #FFC107;
 }
