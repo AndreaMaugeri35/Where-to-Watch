@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Movie;
 use App\Models\Cinema;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -48,5 +49,10 @@ class User extends Authenticatable
     public function cinemas():HasMany
     {
        return $this->hasMany(Cinema::class); 
+    }
+
+    public function movies()
+    {
+       return $this->belongsToMany(Movie::class); 
     }
 }

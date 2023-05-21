@@ -6,6 +6,7 @@ use Exception;
 use App\Models\Movie;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -41,12 +42,15 @@ class PublicController extends Controller
 
 
     public function like(Movie $movie){
-       
-        $movie->like = $movie->like+=1;
-        $movie->save(['timestamps' => false]);   
-        // $movie->save([
-        //     'like'=>$movie->like+=1
-        // ],['timestamps' => false]);
+       if(!$movie->user->contains('id', Auth::user()->id)){
+           $movie->like = $movie->like+=1;
+           $movie->save(['timestamps' => false]);   
+           $movie->user()->attach(Auth::user('id'));
+       }else{
+           $movie->like = $movie->like-=1;
+           $movie->user()->detach(Auth::user('id'));
+           $movie->save(['timestamps' => false]);
+       }
         return redirect(route('movie.show',compact('movie')));
     }
 

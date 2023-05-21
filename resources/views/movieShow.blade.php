@@ -27,12 +27,18 @@
                         <form method="POST" action="{{route('like',compact('movie'))}}">
                             @method('put')
                             @csrf
+                            
+                            @if ($movie->user->contains('id', Auth::user()->id))
+                            <div class="btn btn-primary my-3">{{$movie->like}} Mi piace</div>
+                            <button  type="submit" class="btn btn-danger my-3">{{$movie->like}}Non mi piace</button>
+                            @else
                             <button  type="submit" class="btn btn-primary my-3">{{$movie->like}} Mi piace</button>
+                            @endif
                         </form>
                        @else
                        <a href="{{route('login')}}" class="btn btn-primary my-3">{{$movie->like}} Mi piace</a>
                       @endauth
-                      <a href="{{route('homepage1')}}" class="btn btn-outline-warning">Torna indietro</a>
+                      <a href="{{route('homepage1')}}" class="btn btn-outline-warning">Torna alla Home</a>
                     </div>
                 </div>
             </div>
