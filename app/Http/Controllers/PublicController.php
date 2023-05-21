@@ -55,6 +55,8 @@ class PublicController extends Controller
     }
 
 
+    // $alfabeto =  new Alfabeto($a, $b, $c)
+
 
 
 

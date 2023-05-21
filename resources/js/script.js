@@ -1,4 +1,32 @@
 // console.log('ciaone');
+let navbar = document.querySelector('.navbar');
+const check = navbar.classList;
+
+
+if (window.matchMedia("(max-width: 991px)").matches){
+
+    navbar.classList.replace("bg-transparent", "bg-dark");
+    // navbar.classList.replace('bg-dark');
+
+};
+
+// } else  {
+
+//   navbar.classList.remove('bg-dark');
+//   navbar.classList.add('bg-transparent');
+
+// }
+
+// if (window.matchMedia("(min-width: 992px)").matches) {
+
+  
+//   if(check.includes('bg-dark')){
+
+//     navbar.classList.remove('bg-dark');
+//     navbar.classList.add('bg-transparent');
+//   } 
+
+// }
 
 
 let btns = document.querySelectorAll('.aCustom');

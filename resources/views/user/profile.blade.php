@@ -34,7 +34,8 @@
 
     <div class="container py-5">
         <div data-aos="zoom-in" class="row justify-content-center blur">
-            @foreach(Auth::user()->movies as $movie)
+            <h2 class="text-center display-3 text-white fw-bold py-5">I tuoi mi piace</h2>
+            @forelse(Auth::user()->movies as $movie)
             <div class="col-12 col-md-3  p-3">
             <div class="card bg-transparent cardCustom my-3 justify-content-evenly   ">
                 <div class="d-flex position-relative">
@@ -51,7 +52,12 @@
                 </div>
             </div>
         </div>
-            @endforeach
+        @empty
+            <h2 class="text-center display-6 text-white">Non hai aggiunto ancora alcun mi piace!</h2>
+                <div class="col-8 d-flex justify-content-center p-4">
+                    <a class="btn btn-warning" href="{{route('movies')}}">Vedi i nostri film disponibili</a>
+                </div>
+        @endforelse
         </div>
     </div>
 

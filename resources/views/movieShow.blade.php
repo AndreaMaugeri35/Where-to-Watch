@@ -23,17 +23,20 @@
                         @endforeach
                           <hr>
                       @endif
+                      <span class="likeCustom">{{$movie->like}} <i class="fa-solid fa-heart fa-flip text-warning fa-2x"></i></span>
                       @auth
                         <form method="POST" action="{{route('like',compact('movie'))}}">
                             @method('put')
                             @csrf
                             
-                            @if ($movie->user->contains('id', Auth::user()->id))
-                            <div class="btn btn-primary my-3">{{$movie->like}} Mi piace</div>
-                            <button  type="submit" class="btn btn-danger my-3">{{$movie->like}}Non mi piace</button>
-                            @else
-                            <button  type="submit" class="btn btn-primary my-3">{{$movie->like}} Mi piace</button>
-                            @endif
+                             {{-- ($movie->user->contains('id', Auth::user()->id)) --}}
+                            {{-- <div class="btn btn-primary my-3">{{$movie->like}} Mi piace</div> --}}
+                            <button  type="submit" class="btn @if(!$movie->user->contains('id', Auth::user()->id)) btn-primary @else btn-danger @endif my-3">@if(!$movie->user->contains('id', Auth::user()->id)) Mi piace @else Non mi piace più @endif</button>
+
+
+                            {{-- @else --}}
+                            {{-- <button  type="submit" class="btn btn-primary my-3">{{$movie->like}} Mi piace</button> --}}
+                            {{-- @endif --}}
                         </form>
                        @else
                        <a href="{{route('login')}}" class="btn btn-primary my-3">{{$movie->like}} Mi piace</a>

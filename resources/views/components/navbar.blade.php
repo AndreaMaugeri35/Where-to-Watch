@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg bg-transparent navbar-dark fixed-top fs-4">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{route('homepage1')}}"><img class="logo rounded" src="/media/logo.png" alt=""></a>
       <button class="navbar-toggler  bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,14 +7,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link @if(Route::is('movies')) active @endif" aria-current="page" href="{{route('movies')}}">I nostri film</a>
+            <a class="nav-link @if(Route::is('movies')) active @endif " aria-current="page" href="{{route('movies')}}"><span class="text-warning dividerCustom">|</span>  I nostri film <span class="text-warning dividerCustom">|</span></a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link @if(Route::is('cinema.index')) active @endif" href="{{route('cinema.index')}}">I nostri Cinema</a>
+            <a class="nav-link @if(Route::is('cinema.index')) active @endif" href="{{route('cinema.index')}}">I nostri Cinema <span class="text-warning dividerCustom">|</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  @if(Route::is('cinema.create')) active @endif" href="{{route('cinema.create')}}">Aggiungi Cinema</a>
+            <a class="nav-link  @if(Route::is('cinema.create')) active @endif" href="{{route('cinema.create')}}">Aggiungi Cinema <span class="text-warning dividerCustom">|</span></a>
           </li>
         </ul>
         <ul class="navbar-nav">
